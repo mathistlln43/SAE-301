@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : lun. 18 déc. 2023 à 10:05
+-- Généré le : lun. 18 déc. 2023 à 11:55
 -- Version du serveur : 10.4.28-MariaDB
--- Version de PHP : 8.0.28
+-- Version de PHP : 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -32,6 +32,14 @@ CREATE TABLE `animer` (
   `id_evenement` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Déchargement des données de la table `animer`
+--
+
+INSERT INTO `animer` (`id_artiste`, `id_evenement`) VALUES
+(1, 1),
+(2, 2);
+
 -- --------------------------------------------------------
 
 --
@@ -46,13 +54,23 @@ CREATE TABLE `artiste` (
   `nb_vote` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Déchargement des données de la table `artiste`
+--
+
+INSERT INTO `artiste` (`id_artiste`, `nom_artiste`, `genre`, `biographie`, `nb_vote`) VALUES
+(1, 'Artiste 1', 'musique classique', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', NULL),
+(2, 'Artiste 2', 'Jazz', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', NULL),
+(3, 'Artiste 3', 'Blues', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', NULL),
+(4, 'Artiste 4', 'Pop', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', NULL);
+
 -- --------------------------------------------------------
 
 --
--- Structure de la table `asister`
+-- Structure de la table `assister`
 --
 
-CREATE TABLE `asister` (
+CREATE TABLE `assister` (
   `id_compte` int(11) DEFAULT NULL,
   `id_evenement` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -94,6 +112,14 @@ CREATE TABLE `evenement` (
   `heure` time DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Déchargement des données de la table `evenement`
+--
+
+INSERT INTO `evenement` (`id_evenement`, `nom_evenement`, `date_evenement`, `lieu`, `heure`) VALUES
+(1, 'Evenement 1', '2014-12-24', 'Le Puy-en-Velay', '18:00:00'),
+(2, 'Evenement 2', '2015-12-24', 'Le Puy-en-Velay', '20:00:00');
+
 -- --------------------------------------------------------
 
 --
@@ -125,9 +151,9 @@ ALTER TABLE `artiste`
   ADD PRIMARY KEY (`id_artiste`);
 
 --
--- Index pour la table `asister`
+-- Index pour la table `assister`
 --
-ALTER TABLE `asister`
+ALTER TABLE `assister`
   ADD KEY `id_compte` (`id_compte`),
   ADD KEY `id_evenement` (`id_evenement`);
 
@@ -159,7 +185,7 @@ ALTER TABLE `vote`
 -- AUTO_INCREMENT pour la table `artiste`
 --
 ALTER TABLE `artiste`
-  MODIFY `id_artiste` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_artiste` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT pour la table `compte`
@@ -171,7 +197,7 @@ ALTER TABLE `compte`
 -- AUTO_INCREMENT pour la table `evenement`
 --
 ALTER TABLE `evenement`
-  MODIFY `id_evenement` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_evenement` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT pour la table `vote`
@@ -191,11 +217,11 @@ ALTER TABLE `animer`
   ADD CONSTRAINT `animer_ibfk_2` FOREIGN KEY (`id_evenement`) REFERENCES `evenement` (`id_evenement`);
 
 --
--- Contraintes pour la table `asister`
+-- Contraintes pour la table `assister`
 --
-ALTER TABLE `asister`
-  ADD CONSTRAINT `asister_ibfk_1` FOREIGN KEY (`id_compte`) REFERENCES `compte` (`id_compte`),
-  ADD CONSTRAINT `asister_ibfk_2` FOREIGN KEY (`id_evenement`) REFERENCES `evenement` (`id_evenement`);
+ALTER TABLE `assister`
+  ADD CONSTRAINT `assister_ibfk_1` FOREIGN KEY (`id_compte`) REFERENCES `compte` (`id_compte`),
+  ADD CONSTRAINT `assister_ibfk_2` FOREIGN KEY (`id_evenement`) REFERENCES `evenement` (`id_evenement`);
 
 --
 -- Contraintes pour la table `vote`
