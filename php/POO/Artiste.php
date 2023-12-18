@@ -1,12 +1,18 @@
 <?php
     class Artiste {
 
-        public int $id_artiste;
-        public string $nom;
-        public string $prenom;
-        public string $genre;
-        public string $biographie;
-        public int $nb_vote;
+        public $id_artiste;
+        public $nom_artiste;
+        public $genre;
+        public $biographie;
+
+        public function __construct($id_artiste, $nom_artiste, $genre, $biographie)
+        {
+            $this->id_artiste = $id_artiste;
+            $this->nom_artiste = $nom_artiste;
+            $this->genre = $genre;
+            $this->biographie = $biographie;
+        }
 
     }
 ?>
