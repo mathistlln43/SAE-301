@@ -16,7 +16,7 @@
         <div id="trapeze">
             <div class="trapezeContenu">
                 <p id="event">Connexion</p>
-                <p>Connexion et inscription</p>
+                <p>et inscription</p>
             </div>
         </div>
     </header>

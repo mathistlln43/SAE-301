@@ -15,7 +15,7 @@
            <div id="trapeze">
                <div class="trapezeContenu">
                     <p id="event">En accord</p>
-                    <p>Nos partenaires pour l’évènement</p>
+                    <p>nos partenaires pour l’évènement</p>
                </div>
            </div>
         </header>
