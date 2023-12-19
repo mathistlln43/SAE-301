@@ -45,7 +45,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                 // On ajoute une condition pour la redirection vers admin.php
                 if ($nom === 'admin' && $prenom === 'adminadmin' && $password === 'adminmdp') {
-                    header("Location: admin.php");
+                    header("Location: ../admin.html");
                 } else {
                     header("Location: compte.php");
                 }

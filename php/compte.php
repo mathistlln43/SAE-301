@@ -41,7 +41,6 @@ $conn->close();
     <h2>Informations du Compte</h2>
     <p>Nom d'utilisateur: <?php echo $nom_utilisateur; ?></p>
     <p>Prénom d'utilisateur: <?php echo $prenom_utilisateur; ?></p>
-    <!-- Afficher d'autres informations du compte si nécessaire -->
 
 </body>
 </html>
