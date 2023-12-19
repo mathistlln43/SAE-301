@@ -442,6 +442,15 @@ footer {
 #contact {
     color: var(--blanc);
     font-size: 2.7rem;
+    margin-top: 2rem;
+}
+
+.trapeze2Contenu div, .trapeze2Contenu p {
+    margin-top: 1rem;
+}
+
+.trapeze2Contenu div {
+    text-align: left;
 }
 
 /******************************************/
@@ -452,7 +461,7 @@ footer {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 32vh 30vw;
+    padding: 32vh 15vw 0;
     color: var(--blanc);
 }
 
@@ -460,7 +469,7 @@ footer {
     display: flex;
     width: 100%;
     flex-direction: row;
-    gap: 4vw;
+    gap: 2vw;
 }
 
 #formContact .ligne input {
@@ -472,12 +481,12 @@ footer {
     margin-bottom: 3%;
 }
 
-#formContact input::placeholder {
+#formContact input::placeholder, textarea::placeholder {
     color: #4b4b4b;
     font-size: large;
 }
 
-#formContact input:not(input[type=submit]) {
+#formContact input:not([type=submit], [type="checkbox"]), textarea {
     padding: 0.8rem;
     margin-bottom: 2rem;
     border: solid 1px var(--noir);
@@ -486,4 +495,60 @@ footer {
 
 #formContact #objet, #formContact #message {
     width: calc(100% - 1.6rem);
+}
+
+#envoiContact {
+    text-transform: uppercase;
+    width: 19vw;
+    text-decoration: none;
+    border: none;
+    color: var(--noir);
+    background-color: var(--blanc);
+    padding: 0.8rem 0;
+    margin: 1rem 1.8rem;
+    font-size: large;
+}
+
+#envoiContact:hover {
+    background-color: #d3d3d3;
+}
+
+@media (max-width: 780px) {
+
+    #formContact .ligne{
+        flex-direction: column;
+        gap: 0;
+    }
+
+    #envoiContact {
+        width: 50vw;
+    }
+    
+    #trapeze2 {
+        display: flex;
+        position: relative;
+    }
+
+    #trapeze2::before{
+        border-bottom: none;
+        border-left: none;
+    }
+    
+    .trapeze2Contenu {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        width: 100vw;
+        height: 15rem;
+        padding : 0 1rem;
+        font-size: medium;
+    }
+    
+    #formContact {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 3vh 15vw 0;
+        color: var(--blanc);
+    }
 }
