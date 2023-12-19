@@ -6,8 +6,6 @@ if (!isset($_SESSION['nom_utilisateur']) || !isset($_SESSION['prenom_utilisateur
     exit;
 }
 
-
-
 // Connexion à la base de données
 require('config.php');
 

@@ -42,7 +42,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             if (password_verify($password, $row['motdepasse'])) {
                 $_SESSION['nom_utilisateur'] = $nom;
                 $_SESSION['prenom_utilisateur'] = $prenom;
-                header("Location: compte.php");
+
+                // On ajoute une condition pour la redirection vers admin.php
+                if ($nom === 'admin' && $prenom === 'adminadmin' && $password === 'adminmdp') {
+                    header("Location: admin.php");
+                } else {
+                    header("Location: compte.php");
+                }
+                
+                exit;
             } else {
                 echo "Mot de passe incorrect.";
             }
