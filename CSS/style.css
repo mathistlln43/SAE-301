@@ -1,0 +1,489 @@
+/* élément root pour modification commune des couleurs */
+
+:root {
+    --noir: #252526;
+    --bordeaux: #6A020C;
+    --beige: #B35C45;
+    --blanc: #ffffff;
+    --gris: #BDBDBD;
+}  
+
+body, * {
+    margin: 0;
+    padding: 0;
+}
+
+/*****************************************************************/
+
+
+header img{
+    height: 70vh;
+    width: 70vw;
+    object-fit: cover;
+}
+
+#event {
+    color: var(--beige);
+    text-transform: uppercase;
+    font-size: 3.5rem;
+}
+
+#trapeze {
+    display: flex;
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: var(--blanc);
+}
+
+#trapeze::before{
+    content: "";
+    width: 0;
+    height: 0;
+    border-bottom: 70vh solid var(--noir);
+    border-left: 19vw solid transparent;
+}
+
+.trapezeContenu {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: end;
+    background-color: var(--noir);
+    width: calc(38vw - 5rem);
+    height: 70vh;
+    padding : 0 5rem;
+    font-size: 4rem;
+}
+
+/**********************************************************************************************************
+                                             PARTENAIRES
+**********************************************************************************************************/
+
+section img:not(.reseauxPart) {
+    width: 384px;
+    border-radius: 60px 0;
+    margin-right: 2vw;
+}
+
+.lignePartenaire {
+    display: flex;
+    border-color: var(--gris);
+    justify-content: center;
+    margin: 5vh 0;
+}
+
+.informations {
+    display: flex;
+    padding: 2rem;
+    border: 2px solid;
+    border-color: var(--gris);
+    border-radius: 20px;
+    width: 35vw;
+    font-size: x-large;
+    justify-content: space-between;
+}
+
+.infosVertical {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.boutonPartenaires {
+    text-decoration: none;
+    color: var(--blanc);
+    background-color: var(--bordeaux);
+    padding: 0.8rem;
+    border-radius: 10px;
+    top: 3rem;
+}
+
+.boutonPartenaires:hover {
+    color: var(--beige);
+    background-color: var(--blanc);
+
+    border: solid var(--bordeaux);
+}
+
+.reseauxPartenaires {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.reseauxPart {
+    width: 3.5rem;
+}
+
+footer {
+    height: 15rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: var(--blanc);
+    background-color: var(--noir);
+}
+
+#logo {
+    width: 190px;
+}
+
+#footerContact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contact {
+    display: flex;
+}
+
+@media (max-width: 900px) {
+    
+    header img {
+        height: 50vh;
+    }
+
+    #event {
+        color: var(--beige);
+        text-transform: uppercase;
+        font-size: 2.3rem;
+    }
+
+    #trapeze {
+        display: flex;
+        position: absolute;
+        top: 0;
+        right: 0;
+        color: var(--blanc);
+    }
+
+    #trapeze::before{
+        border-bottom: 50vh solid var(--noir);
+        border-left: 19vw solid transparent;
+    }
+
+    .trapezeContenu {
+        width: calc(38vw - 3rem);
+        height: 50vh;
+        padding : 0 3rem;
+        font-size: 2rem;
+    }
+
+}
+
+@media (max-width: 780px) {
+
+    header {
+        display: flex;
+        flex-direction: column;
+    }
+
+    header img {
+        width: 100vw;
+        height: 25vh;
+    }
+    
+    #event {
+        font-size: 2.5rem;
+    }
+    
+    #trapeze {
+        display: flex;
+        position: relative;
+    }
+
+    #trapeze::before{
+        border-bottom: none;
+        border-left: none;
+    }
+    
+    .trapezeContenu {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        width: 100vw;
+        height: 20vh;
+        padding : 0 1rem;
+        font-size: 2rem;
+    }
+
+    .lignePartenaire {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    section img:not(.reseauxPart) {
+        width: 60vw;
+        margin-bottom: 1.5rem;
+    }
+
+    .informations {
+        height: 15vh;
+        width: 55vw;
+        margin-bottom: 3rem;
+        font-size: large;
+    }
+
+    footer {
+        display: flex;
+        flex-direction: column;
+        height: 45vh;
+    }
+    
+    #logo {
+        width: 130px;
+    }
+    
+    #footerContact {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .contact {
+        display: flex;
+    }
+
+    .reseauxPart {
+        width: 1.8rem;
+    }    
+    
+}
+
+/**********************************************************************************************************
+                                             CONNEXION
+**********************************************************************************************************/
+
+#formulaires {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    gap: 5vw;
+    padding: 5rem 0 6rem;
+    z-index: 3;
+    height: auto;
+}
+
+#formulaires p {
+    font-size: xx-large;
+    color: var(--blanc);
+    margin-bottom: 2rem;
+    font-size: 3rem;
+}
+
+#formulaires form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--bordeaux);
+    width: 25vw;
+    height: auto;
+    padding: 2rem;
+    border-radius: 1px;
+}
+
+#formulaires input::placeholder {
+    color: #4b4b4b;
+    font-size: large;
+}
+
+#formulaires input:not(input[type=submit]) {
+    width: 21vw;
+    padding: 0.8rem;
+    margin-bottom: 2rem;
+    border: solid 1px var(--noir);
+    border-radius: 10px;
+}
+
+.envoiForm {
+    width: 19vw;
+    text-decoration: none;
+    border: none;
+    color: var(--bordeaux);
+    background-color: var(--blanc);
+    padding: 0.8rem 0;
+    margin: 1rem 1.8rem;
+    font-size: large;
+}
+
+.envoiForm:hover {
+    background-color: #d3d3d3;
+}
+
+#gridImg{
+    position: absolute;
+    z-index: 2;
+    margin:0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    left: 50%;
+    transform: translateX(-50%);
+    width: fit-content;
+    height: 75vh;
+    padding: 1rem;
+    align-items: center;
+
+}
+
+#gridImg span{
+    display: flex;
+    width: 85vw;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#gridImg #coImg1{
+    width: 30vw;
+    border-radius: 60px 0;
+}
+
+#gridImg #coImg2{
+    height: 20vw;
+    border-radius: 0 60px;
+    object-fit: cover;
+}
+
+#gridImg #coImg3{
+    width: 25vw;
+}
+
+@media (max-width: 780px) {
+
+    #formulaires {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #formulaires p {
+        font-size: 2rem;
+    }
+
+    #formulaires form {
+        width: 55vw;
+        margin-bottom: 3rem;
+    }
+
+    #formulaires input::placeholder {
+        font-size: medium;
+    }
+
+    #formulaires input:not(input[type=submit]) {
+        width: 54vw;
+    }
+
+    .envoiForm {
+        width: 47vw;
+    }
+
+    #gridImg span{
+        display: flex;
+        flex-direction: column;
+    }
+
+    #gridImg #coImg1{
+        width: 350px;
+        border-radius: 60px 0;
+    }
+
+    #gridImg #coImg2{
+        height: 250px;
+        border-radius: 0 60px;
+        object-fit: cover;
+        margin-top: 8vh;
+    }
+
+    #gridImg #coImg3{
+        width: 350px;
+        margin-top: 22vh;
+    }
+}
+
+/**********************************************************************************************************
+                                             CONTACT
+**********************************************************************************************************/
+
+#bodyContact {
+    background-color: var(--noir);
+    background-image: url("../images/piano.jpg");
+    background-size: auto 100vh;
+}
+
+#trapeze2 {
+    display: flex;
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: var(--blanc);
+    z-index: -1;
+}
+
+#trapeze2::before{
+    content: "";
+    width: 0;
+    height: 0;
+    border-bottom: 100vh solid var(--noir);
+    border-left: 22vw solid transparent;
+}
+
+.trapeze2Contenu {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    background-color: var(--noir);
+    width: calc(60vw - 5rem);
+    height: 100vh;
+    font-size: x-large;
+}
+
+#contact {
+    color: var(--blanc);
+    font-size: 2.7rem;
+}
+
+/******************************************/
+/* FORMULAIRE CONTACT */
+/******************************************/
+
+#formContact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 32vh 30vw;
+    color: var(--blanc);
+}
+
+#formContact .ligne {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    gap: 4vw;
+}
+
+#formContact .ligne input {
+    width: 60vw;
+}
+
+#formContact p {
+    font-size: 2.7rem;
+    margin-bottom: 3%;
+}
+
+#formContact input::placeholder {
+    color: #4b4b4b;
+    font-size: large;
+}
+
+#formContact input:not(input[type=submit]) {
+    padding: 0.8rem;
+    margin-bottom: 2rem;
+    border: solid 1px var(--noir);
+    border-radius: 10px;
+}
+
+#formContact #objet, #formContact #message {
+    width: calc(100% - 1.6rem);
+}
