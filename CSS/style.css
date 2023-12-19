@@ -60,7 +60,7 @@ header img{
                                              PARTENAIRES
 **********************************************************************************************************/
 
-section img:not(.reseauxPart) {
+#partenaires section img:not(.reseauxPart) {
     width: 384px;
     border-radius: 60px 0;
     margin-right: 2vw;
@@ -214,7 +214,7 @@ footer {
         align-items: center;
     }
 
-    section img:not(.reseauxPart) {
+    #partenaires section img:not(.reseauxPart) {
         width: 60vw;
         margin-bottom: 1.5rem;
     }
@@ -550,5 +550,86 @@ footer {
         align-items: center;
         padding: 3vh 15vw 0;
         color: var(--blanc);
+    }
+}
+
+/**********************************************************************************************************
+                                             CONTACT
+**********************************************************************************************************/
+
+#infosPratiques{
+    position: relative;
+    border: solid 1px blue;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.titreIF {
+    font-size: 5rem;
+}
+
+.hautRect {
+    position: absolute;
+    width: 250px;
+    height: 300px;
+    object-fit: cover;
+    right: 20vw;
+    top: 15vh;
+    transform: translateY(-40%);
+}
+
+.basRect {
+    position: absolute;
+    width: 370px;
+    height: auto;
+    object-fit: cover;
+    left: 7vw;
+    bottom: 5vh;
+}
+
+.boutonIF {
+    position: absolute;
+    text-transform: uppercase;
+    color: var(--bordeaux);
+    background-color: var(--blanc);
+    padding: 1rem;
+    width: 20vw;
+    border-radius: 5px;
+    border: solid 2px var(--bordeaux);
+    margin-top: 1.3rem;
+}
+
+.boutonIF:hover {
+    color: var(--blanc);
+    background-color: var(--bordeaux);
+
+}
+
+#IFbillets .boutonIF {
+    right: calc((100vw - 60vw)/2);
+}
+
+#blocBillet {
+    display: flex;
+    margin:0 auto ;
+    color: var(--blanc);
+    background-color: var(--bordeaux);
+    width: 60vw;
+    min-height: 60vh;
+    border-radius: 50px;
+    padding: 2rem;
+}
+
+#blocBillet p{
+    text-align: justify;
+    width: 60%;
+    align-self:center;
+}
+
+@media (max-width: 900px) {
+    .hautRect{
+        display: none;
     }
 }
