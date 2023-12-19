@@ -3,7 +3,7 @@
 
     include("POO/Artiste.php"); /* On inclut la classe Artiste qui est dans le fichier Artiste.php */
 
-    include("config.php"); /* On inclut le fichier config.php */
+    include("bdd/config.php"); /* On inclut le fichier config.php */
 
     // On vérifie si on a pu se connecter à la base de données
     if ($conn->connect_error) {

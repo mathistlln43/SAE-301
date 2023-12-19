@@ -3,7 +3,7 @@
 
     include("POO/Evenement.php"); /* On inclut la classe Evenement qui est dans le fichier Evenement.php */
 
-    include("config.php"); /* On inclut le fichier config.php à ce script php */
+    include("bdd/config.php"); /* On inclut le fichier config.php à ce script php */
 
     // On vérifie si on a pu se connecter à la base de données
     if ($conn->connect_error) {
