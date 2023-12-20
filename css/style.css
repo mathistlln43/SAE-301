@@ -667,7 +667,7 @@ header img{
 
 footer{
     background-color: #252526;
-    height: 271px;
+    height: 180px;
     color: #fff;
     display: flex;
     text-align: center;
@@ -676,38 +676,41 @@ footer{
     align-items: center;
 }
 #logo img{
-    height: 250px;
-    width: 250px;
+    height: auto;
+    width: 300px;
 }
 .reseaux{
     width: 250px;
 }
 .reseaux img{
-    height: 100px;
-    width: 100px;
+    height: 80px;
+    width: 80px;
 }
 footer p{
     text-align: center;
-    font-size: 32px;
+    font-size: 24px;
+    top: 70px;
 }
 .Contact{
     display: flex;
     justify-content: center;
     flex-direction: row;
+    align-items: center;
 }
 .Contact img{
-    height: 85px;
-    width: 85px;
+    height: 70px;
+    width: 70px;
 }
 .mail{
     display: flex;
     flex-direction: row;
     margin-right: 50px;
     text-align: center;
+    align-items: center;
 }
 .mail img{
-    height: 95px;
-    width: 94px;
+    height: 70px;
+    width: 70px;
 }
 
 .mail a{
