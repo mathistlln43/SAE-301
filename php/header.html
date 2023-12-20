@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="navbar-right">
+        <img src="logopabo.png" alt="Logo">
+      </div>
+      <div class="navbar-left">
+        <ul>
+          <li><a href="#">Accueil</a></li>
+          <li><a href="#">Infos Pratiques</a></li>
+          <li><a href="partenaires.php">Nos Partenaires</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="form.php">Connexion</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+</body>
+</html>
+
+<style>
+body, ul {
+  margin: 0;
+  padding: 0;
+}
+
+
+.navbar {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333;
+  color: white;
+  padding: 30px 20px;
+  z-index: 4;
+
+}
+
+.navbar-left ul {
+  list-style: none;
+  display: flex;
+}
+
+.navbar-left ul li {
+  margin-right: 40px;
+}
+
+.navbar-left ul li a {
+  text-decoration: none;
+  color: white;
+}
+
+.navbar-right img {
+  width: 100px; 
+  height: auto;
+}
+
+</style>

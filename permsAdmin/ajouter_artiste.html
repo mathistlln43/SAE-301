@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+		
+<head> <!--Métadonnées de la page-->
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <title>Ajouter un artiste</title>
+</head>
+
+	<body> <!--Corps de la page-->
+		
+		<h2>Ajouter un artiste</h2>
+		
+		<form method="post" action="../php/ExecAdmin/ajout_artiste.php"> <!--On fait un formulaire html pour récupérer les données rentrées par l'admin -->
+			<label for="id_artiste">Identifiant (nombre) :</label>
+			<input type="number" name="id_artiste" placeholder="identifiant de l'artiste"required><br>
+
+			<label for="nom_artiste">Nom de l'artiste:</label>
+			<input type="text" name="nom_artiste" placeholder="nom de l'artiste" required><br>
+
+			<label for="genre">Genre musical de l'artiste :</label>
+			<input type="text" name="genre" placeholder="genre musical de l'artiste" required><br>
+
+			<label for="biographie">Biographie de l'artiste :</label>
+			<input type="text" name="biographie" placeholder="biographie de l'artiste" required><br>
+
+			<input type="submit" id="ajout" value="Ajouter">
+		</form>
+
+	</body>
+</html>
+
+
+

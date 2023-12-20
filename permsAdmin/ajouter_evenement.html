@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+		
+<head> <!--Métadonnées de la page-->
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <title>Ajouter un artiste</title>
+</head>
+
+	<body> <!--Corps de la page-->
+		
+		<h2>Ajouter un événement</h2>
+		
+		<form method="post" action="../php/ExecAdmin/ajout_evenement.php"> <!--On fait un formulaire html pour récupérer les données rentrées par l'admin -->
+			<label for="id_evenement">Identifiant de l'événement:</label>
+			<input type="number" name="id_evenement" placeholder="identifiant de l'événement"required><br>
+
+			<label for="nom_evenement">Nom de l'événement:</label>
+			<input type="text" name="nom_evenement" placeholder="nom de l'événement" required><br>
+
+			<label for="date_evenement">Date de l'événement :</label>
+			<input type="text" name="date_evenement" placeholder="date de l'événement" required><br>
+
+			<label for="lieu">Lieu de l'événement :</label>
+			<input type="text" name="lieu" placeholder="lieu de l'événement" required><br>
+
+            <label for="heure">Heure de l'événement :</label>
+			<input type="text" name="heure" placeholder="heure de l'événnement" required><br>
+
+			<input type="submit" id="ajout" value="Ajouter">
+		</form>
+
+	</body>
+</html>
