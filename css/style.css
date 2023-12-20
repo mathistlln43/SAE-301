@@ -717,3 +717,69 @@ footer p{
     text-decoration: none;
     color: #fff;
 }
+@media screen and (max-width: 768px) {
+    footer {
+        flex-direction: column;
+        text-align: center;
+        height: 400px;
+    }
+
+    .colonne {
+        margin-top: 20px;
+    }
+    .Contact img {
+        height: 50px;
+        width: 50px;
+    }
+    .mail {
+        margin-right: 0;
+    }
+    .mail img {
+        height: 40px;
+        width: 40px;
+    }
+    #logo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+    }
+    #logo img{
+        height: auto;
+        width: 250px;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+
+    footer {
+        flex-direction: column;
+        text-align: center;
+        height: 400px;
+    }
+
+    .colonne {
+        margin-top: 20px;
+    }
+    .Contact img {
+        height: 50px;
+        width: 50px;
+    }
+    .mail {
+        margin-right: 0;
+    }
+    .mail img {
+        height: 40px;
+        width: 40px;
+    }
+    #logo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+    }
+    #logo img{
+        height: auto;
+        width: 250px;
+    }
+}
