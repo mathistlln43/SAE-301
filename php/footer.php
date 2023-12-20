@@ -32,7 +32,7 @@
         </div>-->
 
        <div id="logo">
-            <img src="Images/logo_Les-amis-de-la-musique_blanc.svg" alt="Logo">
+            <img src="images/Logo Blanc.png" alt="Logo">
         </div> 
 
         <div class="colonne">
