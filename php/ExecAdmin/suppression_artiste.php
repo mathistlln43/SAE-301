@@ -20,6 +20,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "Erreur lors de la suppression de l'artiste : " . $conn->error;
     }
 }
-
-$conn->close();
 ?>
