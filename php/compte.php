@@ -7,7 +7,7 @@ if (!isset($_SESSION['nom_utilisateur']) || !isset($_SESSION['prenom_utilisateur
 }
 
 // Connexion à la base de données
-require('config.php');
+require('bdd/config.php');
 
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
