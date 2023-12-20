@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : mar. 19 déc. 2023 à 17:37
+-- Généré le : mer. 20 déc. 2023 à 16:21
 -- Version du serveur : 10.4.28-MariaDB
 -- Version de PHP : 8.2.4
 
@@ -37,8 +37,10 @@ CREATE TABLE `animer` (
 --
 
 INSERT INTO `animer` (`id_artiste`, `id_evenement`) VALUES
-(1, 1),
-(2, 2);
+(4, 1),
+(1, 2),
+(2, 2),
+(3, 2);
 
 -- --------------------------------------------------------
 
@@ -58,21 +60,30 @@ CREATE TABLE `artiste` (
 --
 
 INSERT INTO `artiste` (`id_artiste`, `nom_artiste`, `genre`, `biographie`) VALUES
-(1, 'Artiste 1', 'musique classique', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'),
-(2, 'Artiste 2', 'Jazz', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'),
-(3, 'Artiste 3', 'Blues', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'),
-(4, 'Artiste 4', 'Pop', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.');
+(1, 'ziak', 'rap', 'liberez tout mes copains'),
+(2, 'patoche', 'pop', 'chante les sardines'),
+(3, 'hugo', 'phonk', 'dumdumdumdum dum dumdum'),
+(4, 'les amis de la musique ', 'classique', 'Concerto joué par l\'orchestre des amis de la musique ');
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `assister`
+-- Structure de la table `asister`
 --
 
-CREATE TABLE `assister` (
+CREATE TABLE `asister` (
   `id_compte` int(11) DEFAULT NULL,
   `id_evenement` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Déchargement des données de la table `asister`
+--
+
+INSERT INTO `asister` (`id_compte`, `id_evenement`) VALUES
+(1, 2),
+(2, 1),
+(2, 1);
 
 -- --------------------------------------------------------
 
@@ -84,8 +95,6 @@ CREATE TABLE `compte` (
   `id_compte` int(11) NOT NULL,
   `nom_utilisateur` varchar(255) DEFAULT NULL,
   `prenom_utilisateur` varchar(255) DEFAULT NULL,
-  `date_de_reservation` date DEFAULT NULL,
-  `mail_utilisateur` varchar(255) DEFAULT NULL,
   `motdepasse` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -93,10 +102,10 @@ CREATE TABLE `compte` (
 -- Déchargement des données de la table `compte`
 --
 
-INSERT INTO `compte` (`id_compte`, `nom_utilisateur`, `prenom_utilisateur`, `date_de_reservation`, `mail_utilisateur`, `motdepasse`) VALUES
-(1, 'c', 'c', NULL, NULL, '$2y$10$ATvK/OP4qVwJYuc4aruejOhXT4jrj1RuscQCQ22X6xKVOaLXeiSD2'),
-(2, 'v', 'v', NULL, NULL, '$2y$10$LdxxyeCzczMPgxnzv0O2r.VOH0OQmkPj5DufOnnZQ1D8sWLfYCQa2'),
-(3, 'admin', 'adminadmin', NULL, NULL, '$2y$10$m0.LIma7dorqJeIEJTncQO9nc0NmfNJ1dPypLi3lIoHs.E82E/J7u');
+INSERT INTO `compte` (`id_compte`, `nom_utilisateur`, `prenom_utilisateur`, `motdepasse`) VALUES
+(1, 'christophe', 'camembert', '$2y$10$ATvK/OP4qVwJYuc4aruejOhXT4jrj1RuscQCQ22X6xKVOaLXeiSD2'),
+(2, 'vincent', 'lagaffe', '$2y$10$LdxxyeCzczMPgxnzv0O2r.VOH0OQmkPj5DufOnnZQ1D8sWLfYCQa2'),
+(3, 'admin', 'adminadmin', 'adminmdp');
 
 -- --------------------------------------------------------
 
@@ -117,32 +126,12 @@ CREATE TABLE `evenement` (
 --
 
 INSERT INTO `evenement` (`id_evenement`, `nom_evenement`, `date_evenement`, `lieu`, `heure`) VALUES
-(1, 'Evenement 1', '2014-12-24', 'Le Puy-en-Velay', '18:00:00'),
-(2, 'Evenement 2', '2015-12-24', 'Le Puy-en-Velay', '20:00:00');
-
--- --------------------------------------------------------
-
---
--- Structure de la table `vote`
---
-
-CREATE TABLE `vote` (
-  `id_vote` int(11) NOT NULL,
-  `statut_vote` varchar(255) DEFAULT NULL,
-  `id_compte` int(11) DEFAULT NULL,
-  `id_artiste` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+(1, 'Concert', '2023-12-16', 'Palais des spectacles 1 Avenue Charles Massot\r\n43750 Vals-prés-le-Puy', '21:10:00'),
+(2, 'Concours', '2023-12-15', 'Theatre Place du Breuil Le Puy-en-Velay', '20:00:00');
 
 --
 -- Index pour les tables déchargées
 --
-
---
--- Index pour la table `animer`
---
-ALTER TABLE `animer`
-  ADD KEY `id_artiste` (`id_artiste`),
-  ADD KEY `id_evenement` (`id_evenement`);
 
 --
 -- Index pour la table `artiste`
@@ -151,9 +140,9 @@ ALTER TABLE `artiste`
   ADD PRIMARY KEY (`id_artiste`);
 
 --
--- Index pour la table `assister`
+-- Index pour la table `asister`
 --
-ALTER TABLE `assister`
+ALTER TABLE `asister`
   ADD KEY `id_compte` (`id_compte`),
   ADD KEY `id_evenement` (`id_evenement`);
 
@@ -170,14 +159,6 @@ ALTER TABLE `evenement`
   ADD PRIMARY KEY (`id_evenement`);
 
 --
--- Index pour la table `vote`
---
-ALTER TABLE `vote`
-  ADD PRIMARY KEY (`id_vote`),
-  ADD KEY `id_compte` (`id_compte`),
-  ADD KEY `id_artiste` (`id_artiste`);
-
---
 -- AUTO_INCREMENT pour les tables déchargées
 --
 
@@ -185,50 +166,30 @@ ALTER TABLE `vote`
 -- AUTO_INCREMENT pour la table `artiste`
 --
 ALTER TABLE `artiste`
-  MODIFY `id_artiste` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=85560;
+  MODIFY `id_artiste` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT pour la table `compte`
 --
 ALTER TABLE `compte`
-  MODIFY `id_compte` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_compte` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT pour la table `evenement`
 --
 ALTER TABLE `evenement`
-  MODIFY `id_evenement` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=789;
-
---
--- AUTO_INCREMENT pour la table `vote`
---
-ALTER TABLE `vote`
-  MODIFY `id_vote` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_evenement` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- Contraintes pour les tables déchargées
 --
 
 --
--- Contraintes pour la table `animer`
+-- Contraintes pour la table `asister`
 --
-ALTER TABLE `animer`
-  ADD CONSTRAINT `animer_ibfk_1` FOREIGN KEY (`id_artiste`) REFERENCES `artiste` (`id_artiste`),
-  ADD CONSTRAINT `animer_ibfk_2` FOREIGN KEY (`id_evenement`) REFERENCES `evenement` (`id_evenement`);
-
---
--- Contraintes pour la table `assister`
---
-ALTER TABLE `assister`
-  ADD CONSTRAINT `assister_ibfk_1` FOREIGN KEY (`id_compte`) REFERENCES `compte` (`id_compte`),
-  ADD CONSTRAINT `assister_ibfk_2` FOREIGN KEY (`id_evenement`) REFERENCES `evenement` (`id_evenement`);
-
---
--- Contraintes pour la table `vote`
---
-ALTER TABLE `vote`
-  ADD CONSTRAINT `vote_ibfk_1` FOREIGN KEY (`id_compte`) REFERENCES `compte` (`id_compte`),
-  ADD CONSTRAINT `vote_ibfk_2` FOREIGN KEY (`id_artiste`) REFERENCES `artiste` (`id_artiste`);
+ALTER TABLE `asister`
+  ADD CONSTRAINT `asister_ibfk_1` FOREIGN KEY (`id_compte`) REFERENCES `compte` (`id_compte`),
+  ADD CONSTRAINT `asister_ibfk_2` FOREIGN KEY (`id_evenement`) REFERENCES `evenement` (`id_evenement`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
