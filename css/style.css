@@ -521,84 +521,150 @@ header img{
 }
 
 /**********************************************************************************************************
-                                             CONTACT
+                                         INFOS PRATIQUES
 **********************************************************************************************************/
 
-#infosPratiques{
-    position: relative;
-    border: solid 1px blue;
-    height: 100vh;
+#infosPratiques h1 {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    font-size: 3rem;
+    text-align: center;
+    margin: 2.5rem 0;
 }
 
-.titreIF {
-    font-size: 5rem;
+.infosP {
+    position: relative;
+    margin-bottom: 5rem;
 }
 
-.hautRect {
+.imgFondIF {
     position: absolute;
-    width: 250px;
-    height: 300px;
+    width: 40vw;
+    height: 52vh;
     object-fit: cover;
-    right: 20vw;
-    top: 15vh;
-    transform: translateY(-40%);
+    border-radius: 0 60px;
+    z-index: -1;
 }
 
-.basRect {
-    position: absolute;
-    width: 370px;
-    height: auto;
-    object-fit: cover;
-    left: 7vw;
-    bottom: 5vh;
+.cartesIF {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    color: var(--blanc);
+    height: fit-content;
+    text-align: justify;
 }
 
 .boutonIF {
-    position: absolute;
+    padding: 1rem;
+    border-radius: 5px;
     text-transform: uppercase;
+}
+
+#fondIF1 {
+    top: 6vh;
+    right: 16vw;
+}
+
+#reglesMusiciens {
+    background-color: var(--noir);
+    padding: 2rem 2rem 10rem;
+    margin: 8rem 20vw auto;
+    width: 31.25vw;
+}    
+
+.cartesIF img {
+    position: relative;
+    left: 28vw;
+    width: 18vw;
+    top: -10vh;
+}
+
+#LieuDate {
+    background-color: var(--bordeaux);
+    padding: 2rem 2rem 10rem;
+    margin: 8rem auto 3rem 20vw;
+    width: 31.25vw;
+}
+
+#fondIF2 {
+    top: 160vh;
+    right: 16vw;
+}
+
+#btnIF1 {
+    width: 15vw;
+    position: relative;
+    left: 60vw;
+
     color: var(--bordeaux);
     background-color: var(--blanc);
-    padding: 1rem;
-    width: 20vw;
-    border-radius: 5px;
     border: solid 2px var(--bordeaux);
-    margin-top: 1.3rem;
 }
 
-.boutonIF:hover {
+#btnIF1:hover {
     color: var(--blanc);
     background-color: var(--bordeaux);
-
 }
 
-#IFbillets .boutonIF {
-    right: calc((100vw - 60vw)/2);
-}
-
-#blocBillet {
-    display: flex;
-    margin:0 auto ;
+#btnIF2 {
+    margin: 1rem auto;
     color: var(--blanc);
     background-color: var(--bordeaux);
-    width: 60vw;
-    min-height: 60vh;
-    border-radius: 50px;
-    padding: 2rem;
+    border: solid 2px var(--bordeaux);
+    border: solid 2px var(--blanc);
 }
 
-#blocBillet p{
-    text-align: justify;
-    width: 60%;
-    align-self:center;
+#btnIF2:hover {
+    color: var(--bordeaux);
+    background-color: var(--blanc);
 }
 
+/*
 @media (max-width: 900px) {
+
+    #infosPratiques {
+        height: 52vh;
+        width: 100vw;
+    }
+
     .hautRect{
         display: none;
     }
+
+    #blocBillet {
+        position: relative;
+        display: block;
+        min-height: fit-content;
+        max-height: 55vh;
+    }
+
+    #blocBillet p{
+        text-align: justify;
+        width: 100%;
+    }
+
+    .titreIF {
+        font-size: 3rem;
+    }
+
+    .boutonIF {
+        position: relative;
+        left: 44vw;
+        min-width: 30vw;
+    }
+
+    .basRect {
+        width: 15rem;
+    }
+
+}*/
+
+/**********************************************************************************************************
+                                             FOOTER
+**********************************************************************************************************/
+
 footer{
     background-color: #252526;
     height: 271px;
@@ -643,6 +709,7 @@ footer p{
     height: 95px;
     width: 94px;
 }
+
 .mail a{
     text-decoration: none;
     color: #fff;
