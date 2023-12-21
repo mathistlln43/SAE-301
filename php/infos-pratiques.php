@@ -26,7 +26,7 @@
                 <div class="cartesIF" id="musiciens">
                     <div id="reglesMusiciens">
                         <h1>Règles pour les musiciens</h1>
-                        <p>Le festival En Accord aura lieu au Puy-en-Velay, dans le théâtre du Mayapo. Situé dans le centre-ville, il accueillera tous les évènements durant le week-end du 14 et 15 décembre 2024 ! Venez voter pour votre artiste préféré lors du concours, écouter le concert de bénévoles et visiter les différents stands proposés pour découvrir ou redécouvrir la musique classique. </p>
+                        <p>Vous désirez participer au concours ? Ou encore prendre part au concert de bénévoles le lendemain ? Pour cela, merci de contacter les Amis de la Musiques via la page Contact de ce site, en précisant bien l’objet. Le jour J, il vous sera demandé d’apporter votre propre instrument (excepté pour les pianos, batteries et tout instruments de musique non transportables). Pour les participants du concours, un dossier d’inscription sera renvoyé où il faudra préciser la ou les œuvres revisitées. </p>
                     </div>
                     <img src="..\images\theatre.jpg">
                     <button class="boutonIF" id="btnIF1">Artistes</button>
@@ -50,7 +50,7 @@
                 <div class="cartesIF" id="concours">
                     <div id="caseConcours">
                         <h1>Concours pour les musiciens amateurs</h1>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                        <p>Le concours aura lieu le samedi 14 décembre après-midi. Pour vous inscrire, merci de contacter l’association grâce au formulaire de contact, en précisant bien l’objet. Un mail vous sera renvoyé avec le dossier d’inscription à remplir et les modalités. Vous devrez préciser quelle.s œuvre.s vous revisitez pour le concours, une seule prestation par participant étant autorisée. Le choix du gagnat sera déterminé par le public. Le thème du concours sera les œuvres de musiques classiques modernisées. Le gagnant aura l’opportunité d’être pris en charge par l’association des Amis de la Musique pour débuter une carrière professionnelle dans la musique.</p>
                     </div>
                     <img src="..\images\theatre.jpg">
                 </div>
