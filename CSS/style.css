@@ -525,8 +525,6 @@ header img{
 **********************************************************************************************************/
 
 #infosPratiques h1 {
-    display: flex;
-    flex-direction: column;
     justify-content: center;
     font-size: 3rem;
     text-align: center;
@@ -535,7 +533,6 @@ header img{
 
 .infosP {
     position: relative;
-    margin-bottom: 5rem;
 }
 
 .imgFondIF {
@@ -554,6 +551,11 @@ header img{
     color: var(--blanc);
     height: fit-content;
     text-align: justify;
+}  
+
+.cartesIF img {
+    position: relative;
+    width: 18vw;
 }
 
 .boutonIF {
@@ -562,41 +564,28 @@ header img{
     text-transform: uppercase;
 }
 
-#fondIF1 {
+#fondIF1, #fondIF3 {
     top: 6vh;
     right: 16vw;
 }
 
-#reglesMusiciens {
+#reglesMusiciens, #caseConcours {
     background-color: var(--noir);
     padding: 2rem 2rem 10rem;
-    margin: 8rem 20vw auto;
+    margin: 8rem 20vw 0;
     width: 31.25vw;
-}    
+}  
 
-.cartesIF img {
-    position: relative;
+#musiciens img, #concours img {
     left: 28vw;
-    width: 18vw;
     top: -10vh;
-}
-
-#LieuDate {
-    background-color: var(--bordeaux);
-    padding: 2rem 2rem 10rem;
-    margin: 8rem auto 3rem 20vw;
-    width: 31.25vw;
-}
-
-#fondIF2 {
-    top: 160vh;
-    right: 16vw;
-}
+} 
 
 #btnIF1 {
     width: 15vw;
     position: relative;
     left: 60vw;
+    top: -33vh;
 
     color: var(--bordeaux);
     background-color: var(--blanc);
@@ -606,9 +595,36 @@ header img{
 #btnIF1:hover {
     color: var(--blanc);
     background-color: var(--bordeaux);
+}  
+
+#LieuDate {
+    background-color: var(--bordeaux);
+    padding: 10rem 2rem 2rem;
+    margin: 0 auto 3rem 50vw;
+    width: 31.25vw;
+}
+
+#lieu {
+    margin-top: -5rem;
+    bottom: 5rem;
+}
+
+#lieu img {
+    left: 58vw;
+    top: 12vh;
+}
+
+#fondIF2 {
+    top: 15vh;
+    left: 16vw;
+    height: 67vh;
+    object-fit: cover;
 }
 
 #btnIF2 {
+    display: flex;
+    width: 15vw;
+    justify-content: center;
     margin: 1rem auto;
     color: var(--blanc);
     background-color: var(--bordeaux);
@@ -621,46 +637,71 @@ header img{
     background-color: var(--blanc);
 }
 
-/*
-@media (max-width: 900px) {
-
+@media (max-width: 780px) {
+    
     #infosPratiques {
-        height: 52vh;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .imgFondIF {
+        position: absolute;
         width: 100vw;
     }
-
-    .hautRect{
-        display: none;
+    
+    .cartesIF {
+        align-items: center;
+    }  
+    
+    .cartesIF img {
+        width: 38vw;
     }
-
-    #blocBillet {
+    
+    #fondIF1, #fondIF3 {
+        top: 6vh;
+        right: auto;
+        height: 67vh
+    }
+    
+    #reglesMusiciens, #caseConcours {
+        margin: 2rem auto;
+        width: 65vw;
+    }  
+    
+    #musiciens img, #concours img {
+        left: auto;
+    } 
+    
+    #btnIF1 {
+        width: 24vw;
         position: relative;
-        display: block;
-        min-height: fit-content;
-        max-height: 55vh;
+        left: auto;
+        top: -5rem
     }
-
-    #blocBillet p{
-        text-align: justify;
-        width: 100%;
+    
+    #LieuDate {
+        margin: 0 auto 3rem;
+        width: 65vw;
     }
-
-    .titreIF {
-        font-size: 3rem;
+    
+    #lieu {
+        margin-top: auto;
+        bottom: 5rem;
     }
-
-    .boutonIF {
-        position: relative;
-        left: 44vw;
-        min-width: 30vw;
+    
+    #lieu img {
+        left: auto;
     }
-
-    .basRect {
-        width: 15rem;
+    
+    #fondIF2 {
+        top: 14vh;
+        left: auto;
     }
-
-}*/
-
+    
+    #btnIF2 {
+        width: 30vw;
+    }
+}
 /**********************************************************************************************************
                                              FOOTER
 **********************************************************************************************************/
