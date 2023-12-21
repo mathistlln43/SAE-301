@@ -7,7 +7,7 @@ if (!isset($_SESSION['nom_utilisateur']) || !isset($_SESSION['prenom_utilisateur
 }
 
 // Connexion à la base de données
-require('bdd/config.php');
+require('config.php');
 
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
@@ -28,7 +28,7 @@ if ($result->num_rows == 1) {
     echo "Erreur: Compte non trouvé.";
 }
 
-$conn->close();
+
 ?>
 
 <!DOCTYPE html>
@@ -39,7 +39,7 @@ $conn->close();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Connexion</title>
 
-    <link href="stylesPageAdminEtCompte.css" rel="stylesheet">
+    <link href="../css/style4.css" rel="stylesheet">
 </head>
 
 <body>
@@ -56,9 +56,9 @@ $conn->close();
 
 
     <div id="gridImg">
-        <img src="images/mairie.jpg" id="coImg1">
+        <img src="../img/mairie.jpg" id="coImg1">
         <span>
-            <img src="images/mairie.jpg" id="coImg2">
+            <img src="../img/mairie.jpg" id="coImg2">
         </span>
     </div>
 
@@ -66,33 +66,30 @@ $conn->close();
     <section id="admin">
         <p>Compte</p>
         <h3>Nom : <?php echo $nom_utilisateur; ?></h3>
-        <h3>Prénom : <?php echo $prénom_utilisateur; ?></h3>
+        <h3>Prénom : <?php echo $prenom_utilisateur; ?></h3>
         <p>Je souhaite assister à :</p>
         <select class="envoiAdmin">
-            <option value="pokora">Pokora - salle b - 21h</option>
-            <option value="bidule">Bidule - salle a - 22 janvier - 21h</option>
-            <option value="patoches">Patoches - salle b - 14 mars</option>
-        </select>
-        <button class="envoiAdmin" style="margin-top: 2cm;">Deconnexion</button>
+        <?php
+    
+        // Récupération des evenement
+        $sql = "SELECT nom_evenement, lieu, date_evenement FROM evenement";
+        $result = $conn->query($sql);
+
+        if ($result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+                echo "<option value='" . $row['nom_evenement'] . "'>" . $row['nom_evenement'] . " - " . $row['lieu'] . " - " . $row['date_evenement'] . "</option>";
+            }
+        } else {
+            echo "<option value=''>Aucun événement trouvé</option>";
+        }
+
+        $conn->close();
+        ?>
+    </select>
+        <a href="connexion.php"><button type="" class="envoiAdmin" style="margin-top: 2cm; ">Deconnexion</button></a>
     </section>
 
 
-    <footer>
-        <img id="logo" src="images/Logo Blanc.png">
-
-        <div id="footerContact">
-            <div class="contact">
-                <img src="images/phone.svg">
-                <p>+33 6 78 08 94 77</p>
-            </div>
-            <div class="contact">
-                <img src="images/mail.svg">
-                <p>amisdelamusique63@gmail.com</p>
-            </div>
-        </div>
-
-        <img class="reseauxPart" src="images/facebook_blanc.png">
-    </footer>
 
 </body>
 
