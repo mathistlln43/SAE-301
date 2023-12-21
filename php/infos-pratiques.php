@@ -26,7 +26,7 @@
                 <div class="cartesIF" id="musiciens">
                     <div id="reglesMusiciens">
                         <h1>Règles pour les musiciens</h1>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                        <p>Le festival En Accord aura lieu au Puy-en-Velay, dans le théâtre du Mayapo. Situé dans le centre-ville, il accueillera tous les évènements durant le week-end du 14 et 15 décembre 2024 ! Venez voter pour votre artiste préféré lors du concours, écouter le concert de bénévoles et visiter les différents stands proposés pour découvrir ou redécouvrir la musique classique. </p>
                     </div>
                     <img src="..\images\theatre.jpg">
                     <button class="boutonIF" id="btnIF1">Artistes</button>
@@ -39,7 +39,7 @@
                     <img src="..\images\theatre.jpg">
                     <div id="LieuDate">
                         <h1>Lieu et date</h1>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                        <p>Le festival En Accord aura lieu au Puy-en-Velay, dans le théâtre du Mayapo. Situé dans le centre-ville, il accueillera tous les évènements durant le week-end du 14 et 15 décembre 2024 ! Venez voter pour votre artiste préféré lors du concours, écouter le concert de bénévoles et visiter les différents stands proposés pour découvrir ou redécouvrir la musique classique. </p>
                         <button class="boutonIF" id="btnIF2">Voir les horaires</button>
                     </div>
                 </div>
