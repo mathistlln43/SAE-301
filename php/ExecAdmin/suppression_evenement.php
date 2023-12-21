@@ -1,6 +1,6 @@
 <?php
 
-require('../config.php');
+require('../bdd/config.php');
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 
@@ -15,7 +15,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $sql = "DELETE FROM evenement WHERE id_evenement = $id_evenement";
     if ($conn->query($sql) === TRUE) {
-        echo "Evenement supprimé avec succès.";
+        // Vérifier si des lignes ont été affectées
+        if ($conn->affected_rows > 0) {
+            echo "Evenement supprimé avec succès.";
+        } else {
+            echo "Aucun événement ne possède cet ID.";
+        }
     } else {
         echo "Erreur lors de la suppression de l'evenement : " . $conn->error;
     }

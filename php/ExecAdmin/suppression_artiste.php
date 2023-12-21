@@ -1,6 +1,6 @@
 <?php
 
-require('../config.php');
+require('../bdd/config.php');
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 
@@ -15,8 +15,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $sql = "DELETE FROM artiste WHERE id_artiste = $id_artiste";
     if ($conn->query($sql) === TRUE) {
-        echo "Artiste supprimé avec succès.";
+        // Vérifier si des lignes ont été affectées
+        if ($conn->affected_rows > 0) {
+            echo "Artiste supprimé avec succès.";
+        } else {
+            echo "Cet ID ne correspond à aucun artiste.";
+        }
     } else {
         echo "Erreur lors de la suppression de l'artiste : " . $conn->error;
     }
 }
+
+$conn->close();
+?>

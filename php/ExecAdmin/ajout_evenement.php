@@ -1,6 +1,6 @@
 <?php
 
-include("../config.php"); /* On inclut le fichier config.php à ce script php */
+include("../bdd/config.php"); /* On inclut le fichier config.php à ce script php */
 
 // On récupère les données du formulaire de la page admin.html
 $id_evenement = $_POST["id_evenement"];

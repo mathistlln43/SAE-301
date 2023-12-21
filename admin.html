@@ -67,8 +67,10 @@
 
     <section id="admin">
         <p>Compte Administrateur</p>
-        <h3>Nom : Bernard</h3>
-        <h3>Prénom : Jean</h3>
+        <h3>Nom : admin</h3>
+        <h3>Prénom : adminadmin</h3>
+
+
         <p>Artistes</p>
         <button onclick="afficherFormulaire('ajouterArtiste')" class="envoiAdmin">Ajouter</button>
         <div id="ajouterArtiste" class="formulaire" style="display: none;">
@@ -82,22 +84,43 @@
               <input type="submit" value="Ajouter Artiste">
             </form>
         </div>
+        
         <button onclick="afficherFormulaire('supprimerArtiste')" class="envoiAdmin">Supprimer</button>
+        <div id="supprimerArtiste" class="formulaire" style="display: none;">
+            <!-- Formulaire de suppression d'artiste -->
+            <form onsubmit="return envoyerFormulaire('supprimerArtisteForm');" id="supprimerArtisteForm" action="php/ExecAdmin/suppression_artiste.php" method="post">
+                <!-- Vos champs de formulaire ici -->
+                <input type="number" name="id_artiste" placeholder="ID de l'artiste à supprimer">
+                <input type="submit" value="Supprimer Artiste">
+            </form>
+        </div>
+
+
         <p>Evenements</p>
+        
         <button onclick="afficherFormulaire('ajouterEvenement')" class="envoiAdmin">Ajouter</button>
-        <div id="ajouterArtiste" class="formulaire" style="display: none;">
+        <div id="ajouterEvenement" class="formulaire" style="display: none;">
             <!-- Formulaire d'ajout d'artiste -->
             <form onsubmit="return envoyerFormulaire('ajouterEvenementForm');" id="ajouterEvenementForm" action="php/ExecAdmin/ajout_evenement.php" method="post">
               <!-- Vos champs de formulaire ici -->
               <input type="text" name="id_evenement" placeholder="ID de l'evenement">
               <input type="text" name="nom_evenement" placeholder="Nom de l'evenement">
-              <input type="text" name="date_evenement" placeholder="Date de l'evenement">
+              <input type="text" name="date_evenement" placeholder="Date de l'evenement (AAAA-MM-JJ)">
               <input type="text" name="lieu" placeholder="Lieu de l'evenement">
-              <input type="text" name="heure" placeholder="Heure de l'evenement">
+              <input type="text" name="heure" placeholder="Heure de l'evenement (HH:MM)">
               <input type="submit" value="Ajouter Evenement">
             </form>
         </div>
+
         <button onclick="afficherFormulaire('supprimerEvenement')" class="envoiAdmin">Supprimer</button>
+        <div id="supprimerEvenement" class="formulaire" style="display: none;">
+            <!-- Formulaire de suppression d'artiste -->
+            <form onsubmit="return envoyerFormulaire('supprimerEvenementForm');" id="supprimerEvenementForm" action="php/ExecAdmin/suppression_evenement.php" method="post">
+                <!-- Vos champs de formulaire ici -->
+                <input type="number" name="id_evenement" placeholder="ID de l'evenement à supprimer">
+                <input type="submit" value="Supprimer Evenement">
+            </form>
+        </div>
         <button class="envoiAdmin" style="margin-top: 2cm;">Deconnexion</button>
     </section>
 
