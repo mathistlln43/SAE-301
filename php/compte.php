@@ -32,15 +32,68 @@ $conn->close();
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="fr">
+
 <head>
-    <title>Informations du Compte</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connexion</title>
+
+    <link href="styles.css" rel="stylesheet">
 </head>
+
 <body>
 
-    <h2>Informations du Compte</h2>
-    <p>Nom d'utilisateur: <?php echo $nom_utilisateur; ?></p>
-    <p>Prénom d'utilisateur: <?php echo $prenom_utilisateur; ?></p>
+    <header>
+        <img src="images/nvtheatre.jpg">
+        <div id="trapeze">
+            <div class="trapezeContenu">
+                <p id="event">Compte</p>
+                <p>Espace Compte</p>
+            </div>
+        </div>
+    </header>
+
+
+    <div id="gridImg">
+        <img src="images/mairie.jpg" id="coImg1">
+        <span>
+            <img src="images/mairie.jpg" id="coImg2">
+        </span>
+    </div>
+
+
+    <section id="admin">
+        <p>Compte</p>
+        <h3>Nom : <?php echo $nom_utilisateur; ?></h3>
+        <h3>Prénom : <?php echo $prénom_utilisateur; ?></h3>
+        <p>Je souhaite assister à :</p>
+        <select class="envoiAdmin">
+            <option value="pokora">Pokora - salle b - 21h</option>
+            <option value="bidule">Bidule - salle a - 22 janvier - 21h</option>
+            <option value="patoches">Patoches - salle b - 14 mars</option>
+        </select>
+        <button class="envoiAdmin" style="margin-top: 2cm;">Deconnexion</button>
+    </section>
+
+
+    <footer>
+        <img id="logo" src="images/Logo Blanc.png">
+
+        <div id="footerContact">
+            <div class="contact">
+                <img src="images/phone.svg">
+                <p>+33 6 78 08 94 77</p>
+            </div>
+            <div class="contact">
+                <img src="images/mail.svg">
+                <p>amisdelamusique63@gmail.com</p>
+            </div>
+        </div>
+
+        <img class="reseauxPart" src="images/facebook_blanc.png">
+    </footer>
 
 </body>
+
 </html>
