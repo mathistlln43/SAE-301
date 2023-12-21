@@ -615,7 +615,7 @@ header img{
 }
 
 #fondIF2 {
-    top: 15vh;
+    top: 18vh;
     left: 16vw;
     height: 67vh;
     object-fit: cover;
@@ -637,6 +637,51 @@ header img{
     background-color: var(--blanc);
 }
 
+@media (max-width: 900px) {
+
+    .imgFondIF {
+        width: 45vw;
+        height: 66vh;
+    }
+
+    #fondIF1, #fondIF3 {
+        right: 4vw;
+    }
+
+    #fondIF2 {
+        left: 4vw;
+    }
+
+    #reglesMusiciens, #caseConcours {
+        margin: 6rem auto auto 2rem;
+        width: 50vw;
+    }
+
+    #btnIF1 {
+        left: 65vw;
+        top: -26vh;
+    }
+    
+    #LieuDate {
+        width: 50vw;
+        margin: 0 2rem 3rem auto;
+    }
+    
+    .cartesIF img {
+        width: 35vw;
+    } 
+
+    #musiciens img, #concours img {
+        left: 14vw;
+        top: -10vh;
+    } 
+
+    #lieu img {
+        left: 50vw;
+        top: 12vh;
+    }
+}
+
 @media (max-width: 780px) {
     
     #infosPratiques {
@@ -647,6 +692,8 @@ header img{
     .imgFondIF {
         position: absolute;
         width: 100vw;
+        border-radius: 0;
+        height: 67vh;
     }
     
     .cartesIF {
@@ -654,13 +701,12 @@ header img{
     }  
     
     .cartesIF img {
-        width: 38vw;
+        width: 50vw;
     }
     
     #fondIF1, #fondIF3 {
         top: 6vh;
         right: auto;
-        height: 67vh
     }
     
     #reglesMusiciens, #caseConcours {
