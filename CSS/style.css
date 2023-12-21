@@ -567,6 +567,7 @@ header img{
 #fondIF1, #fondIF3 {
     top: 6vh;
     right: 16vw;
+    min-height: 56vh;
 }
 
 #reglesMusiciens, #caseConcours {
@@ -585,7 +586,7 @@ header img{
     width: 15vw;
     position: relative;
     left: 60vw;
-    top: -33vh;
+    top: -26vh;
 
     color: var(--bordeaux);
     background-color: var(--blanc);
@@ -617,7 +618,7 @@ header img{
 #fondIF2 {
     top: 18vh;
     left: 16vw;
-    height: 67vh;
+    min-height: 67vh;
     object-fit: cover;
 }
 
