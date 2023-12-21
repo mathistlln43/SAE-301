@@ -15,10 +15,9 @@ $requete = $conn->prepare("INSERT INTO evenement (id_evenement, nom_evenement, d
 $requete->bind_param("issss", $id_evenement, $nom_evenement, $date_evenement, $lieu, $heure);
 $requete->execute();
 
-echo("<h2>Cet evenement a été ajouté à la base de données !</h2>");
+echo("Cet evenement a été ajouté à la base de données !");
 
 $requete->close();
 $conn->close();
 
-echo("<a href='../../admin.html'>Retour a l'accueil</a></li>")
 ?>
