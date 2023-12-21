@@ -39,13 +39,13 @@ if ($result->num_rows == 1) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Connexion</title>
 
-    <link href="../css/style4.css" rel="stylesheet">
+    <link href="../css/style.css" rel="stylesheet">
 </head>
 
 <body>
 
     <header>
-        <img src="images/nvtheatre.jpg">
+        <img src="../img/nvtheatre.jpg">
         <div id="trapeze">
             <div class="trapezeContenu">
                 <p id="event">Compte</p>
