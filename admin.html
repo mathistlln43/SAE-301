@@ -9,13 +9,13 @@
     <link href="stylesPageAdminEtCompte.css" rel="stylesheet">
     <script>
         function afficherFormulaire(formulaireId) {
-          // Masquer tous les formulaires
+          // On masque tous les formulaires
           var formulaires = document.querySelectorAll('.formulaire');
           formulaires.forEach(function (formulaire) {
             formulaire.style.display = 'none';
           });
     
-          // Afficher le formulaire spécifié
+          // On affiche le formulaire spécifié
           var formulaire = document.getElementById(formulaireId);
           formulaire.style.display = 'block';
         }
@@ -27,9 +27,9 @@
     
           xhr.onreadystatechange = function () {
             if (xhr.readyState === 4 && xhr.status === 200) {
-              // Afficher le message de succès ou effectuer d'autres actions
+              // Affichage le message de succès à ce moment la
               alert(xhr.responseText);
-                // Actualiser la page
+                // Actualisation de la page
                 location.reload();
             }
           };
@@ -37,7 +37,7 @@
           xhr.open("POST", formulaire.action, true);
           xhr.send(formData);
     
-          // Empêcher le formulaire de se soumettre normalement
+          // Empêchement du formulaire de se soumettre normalement
           return false;
         }
       </script>
@@ -76,7 +76,6 @@
         <div id="ajouterArtiste" class="formulaire" style="display: none;">
             <!-- Formulaire d'ajout d'artiste -->
             <form onsubmit="return envoyerFormulaire('ajouterArtisteForm');" id="ajouterArtisteForm" action="php/ExecAdmin/ajout_artiste.php" method="post">
-              <!-- Vos champs de formulaire ici -->
               <input type="text" name="id_artiste" placeholder="ID de l'artiste">
               <input type="text" name="nom_artiste" placeholder="Nom de l'artiste">
               <input type="text" name="genre" placeholder="Genre musical de l'artsite">
@@ -89,7 +88,6 @@
         <div id="supprimerArtiste" class="formulaire" style="display: none;">
             <!-- Formulaire de suppression d'artiste -->
             <form onsubmit="return envoyerFormulaire('supprimerArtisteForm');" id="supprimerArtisteForm" action="php/ExecAdmin/suppression_artiste.php" method="post">
-                <!-- Vos champs de formulaire ici -->
                 <input type="number" name="id_artiste" placeholder="ID de l'artiste à supprimer">
                 <input type="submit" value="Supprimer Artiste">
             </form>
@@ -100,9 +98,8 @@
         
         <button onclick="afficherFormulaire('ajouterEvenement')" class="envoiAdmin">Ajouter</button>
         <div id="ajouterEvenement" class="formulaire" style="display: none;">
-            <!-- Formulaire d'ajout d'artiste -->
+            <!-- Formulaire d'ajout d'evenement -->
             <form onsubmit="return envoyerFormulaire('ajouterEvenementForm');" id="ajouterEvenementForm" action="php/ExecAdmin/ajout_evenement.php" method="post">
-              <!-- Vos champs de formulaire ici -->
               <input type="text" name="id_evenement" placeholder="ID de l'evenement">
               <input type="text" name="nom_evenement" placeholder="Nom de l'evenement">
               <input type="text" name="date_evenement" placeholder="Date de l'evenement (AAAA-MM-JJ)">
@@ -114,9 +111,8 @@
 
         <button onclick="afficherFormulaire('supprimerEvenement')" class="envoiAdmin">Supprimer</button>
         <div id="supprimerEvenement" class="formulaire" style="display: none;">
-            <!-- Formulaire de suppression d'artiste -->
+            <!-- Formulaire de suppression d'evenement -->
             <form onsubmit="return envoyerFormulaire('supprimerEvenementForm');" id="supprimerEvenementForm" action="php/ExecAdmin/suppression_evenement.php" method="post">
-                <!-- Vos champs de formulaire ici -->
                 <input type="number" name="id_evenement" placeholder="ID de l'evenement à supprimer">
                 <input type="submit" value="Supprimer Evenement">
             </form>
