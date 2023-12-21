@@ -39,7 +39,7 @@ $conn->close();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Connexion</title>
 
-    <link href="styles.css" rel="stylesheet">
+    <link href="stylesPageAdminEtCompte.css" rel="stylesheet">
 </head>
 
 <body>
