@@ -1,67 +1,103 @@
 <?php
-    session_start();
 
-    include("POO/Artiste.php"); /* On inclut la classe Artiste qui est dans le fichier Artiste.php */
+session_start();
 
-    include("bdd/config.php"); /* On inclut le fichier config.php */
+include("POO/Artiste.php");
+include("bdd/config.php");
 
-    // On vérifie si on a pu se connecter à la base de données
-    if ($conn->connect_error) {
-        die("Échec de la connexion à la base de données : " . $conn->connect_error);
-    }
+if ($conn->connect_error) {
+    die("Échec de la connexion à la base de données : " . $conn->connect_error);
+}
 
-    // On récupère les données de la table "artiste"
-    $sql = "SELECT * FROM artiste";
-    $result = $conn->query($sql);
-    
-    // On vérifie si la requête s'est bien éxécuté
-    if (!$result) {
-        die("Erreur lors de l'exécution de la requête : " . $conn->error);
-    }
+$sql = "SELECT * FROM artiste";
+$result = $conn->query($sql);
 
-    $artists = array();
+if (!$result) {
+    die("Erreur lors de l'exécution de la requête : " . $conn->error);
+}
 
-    // On récupère les données et on crée des objets "Artistes"
-    while ($row = $result->fetch_assoc()) {
-        $artist = new Artiste($row['id_artiste'], $row['nom_artiste'], $row['genre'], $row['biographie']);
-        $artists[] = $artist;
-    }
+$artists = array();
 
-    $conn->close();
+while ($row = $result->fetch_assoc()) {
+    $artist = new Artiste($row['id_artiste'], $row['nom_artiste'], $row['genre'], $row['biographie']);
+    $artists[] = $artist;
+}
+
+$conn->close();
 ?>
+
 <!DOCTYPE html>
 <html lang="fr">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Liste des artistes</title>
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liste des artistes</title>
 
-    <body>
+    <!-- Ajoutez ces lignes pour inclure Swiper -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/swiper@7/swiper-bundle.min.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@7/swiper-bundle.min.js"></script>
 
-        <h2>Liste des artistes</h2>
+    <style>        
+        .swiper-container {
+            width: 100%; /* Ajuste la largeur à 100% de la fenêtre */
+        }
 
-        <?php
-            // On vérifie s'il y a des données dans la table "artiste"
-            if (!empty($artists)) {
-                echo '<table>';
-                echo "<tr><th>ID de l'artiste</th><th>Nom de l'artiste</th><th>Genre musical</th><th>Biographie</th></tr>";
+        .swiper-button-prev, .swiper-button-next {
+            background-color: #3498db;
+            color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            margin: 0 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
 
-                // On affiche les données
-                foreach ($artists as $artist) {
-                    echo '<tr>';
-                    echo '<td>' . $artist->id_artiste . '</td>';
-                    echo '<td>' . $artist->nom_artiste . '</td>';
-                    echo '<td>' . $artist->genre . '</td>';
-                    echo '<td>' . $artist->biographie . '</td>';
-                    echo '</tr>';
-                }
+<body>
 
-                echo '</table>';
-            } else {
-                echo 'Aucune donnée trouvée dans la table "artiste".';
-            }
-        ?>
+    <h2>Liste des artistes</h2>
 
-    </body>
+    <?php
+    if (!empty($artists)) {
+        // Utilisez une classe spécifique pour le conteneur Swiper
+        echo '<div class="swiper-container">';
+        echo '<div class="swiper-wrapper">';
+
+        foreach ($artists as $artist) {
+            // Utilisez une classe spécifique pour chaque diapositive Swiper
+            echo '<div class="swiper-slide">';
+            echo "<img src='../Images/$artist->id_artiste.jpg' width='500px'>";
+            echo '<p>ID de l\'artiste: ' . $artist->id_artiste . '</p>';
+            echo '<p>Nom de l\'artiste: ' . $artist->nom_artiste . '</p>';
+            echo '<p>Genre musical: ' . $artist->genre . '</p>';
+            echo '<p>Biographie: ' . $artist->biographie . '</p>';
+            echo '</div>';
+        }
+
+        echo '</div>';
+
+        // Ajoutez des boutons de navigation personnalisés
+        echo '<div class="swiper-button-prev"></div>';
+        echo '<div class="swiper-button-next"></div>';
+
+        echo '</div>';
+
+        // Ajoutez le script Swiper pour l'initialisation avec les boutons de navigation
+        echo '<script>';
+        echo 'var swiper = new Swiper(".swiper-container", {';
+        echo '  slidesPerView: 1,';
+        echo '  spaceBetween: 10,';
+        echo '  navigation: {';
+        echo '    nextEl: ".swiper-button-next",';
+        echo '    prevEl: ".swiper-button-prev",';
+        echo '  },';
+        echo '  allowTouchMove: false,'; // Désactiver la navigation par glissement
+        echo '});';
+        echo '</script>';
+    } else {
+        echo 'Aucune donnée trouvée dans la table "artiste".';
+    }
+    ?>
+
+</body>
 </html>

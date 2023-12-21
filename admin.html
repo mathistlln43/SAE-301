@@ -1,26 +1,124 @@
 <!DOCTYPE html>
-<html>
-    <head> <!--Métadonnées de la page-->
-		<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
-		<title>Page administrateur</title>
-	</head>
-    <body>
+<html lang="fr">
 
-        <h2>Bienvenue sur la page Admin</h2>
-        <p>Vous pouvez ajouter, modifier et supprimer des éléments dans les tables "artiste" et "evenement" en tant qu'administrateur.</p>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connexion</title>
 
-        <h3>Gestion des Artistes</h3>
-        <ul>
-            <li><a href="permsAdmin/ajouter_artiste.html">Ajouter un Artiste</a></li>
-            <li><a href="permsAdmin/modifier_artiste.html">Modifier un Artiste</a></li>
-            <li><a href="permsAdmin/supprimer_artiste.html">Supprimer un Artiste</a></li>
-        </ul>
+    <link href="stylesPageAdminEtCompte.css" rel="stylesheet">
+    <script>
+        function afficherFormulaire(formulaireId) {
+          // Masquer tous les formulaires
+          var formulaires = document.querySelectorAll('.formulaire');
+          formulaires.forEach(function (formulaire) {
+            formulaire.style.display = 'none';
+          });
+    
+          // Afficher le formulaire spécifié
+          var formulaire = document.getElementById(formulaireId);
+          formulaire.style.display = 'block';
+        }
+    
+        function envoyerFormulaire(formulaireId) {
+          var formulaire = document.getElementById(formulaireId);
+          var formData = new FormData(formulaire);
+          var xhr = new XMLHttpRequest();
+    
+          xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+              // Afficher le message de succès ou effectuer d'autres actions
+              alert(xhr.responseText);
+                // Actualiser la page
+                location.reload();
+            }
+          };
+    
+          xhr.open("POST", formulaire.action, true);
+          xhr.send(formData);
+    
+          // Empêcher le formulaire de se soumettre normalement
+          return false;
+        }
+      </script>
+</head>
 
-        <h3>Gestion des Événements</h3>
-        <ul>
-            <li><a href="permsAdmin/ajouter_evenement.html">Ajouter un Événement</a></li>
-            <li><a href="permsAdmin/modifier_evenement.html">Modifier un Événement</a></li>
-            <li><a href="permsAdmin/supprimer_evenement.html">Supprimer un Événement</a></li>
-        </ul>
-    </body>
+<body>
+
+    <header>
+        <img src="images/nvtheatre.jpg">
+        <div id="trapeze">
+            <div class="trapezeContenu">
+                <p id="event">Compte</p>
+                <p>Compte Administratif</p>
+            </div>
+        </div>
+    </header>
+
+
+    <div id="gridImg">
+        <img src="images/mairie.jpg" id="coImg1">
+        <span>
+            <img src="images/mairie.jpg" id="coImg2">
+            <img src="images/mairie.jpg" id="coImg3">
+        </span>
+    </div>
+
+
+    <section id="admin">
+        <p>Compte Administrateur</p>
+        <h3>Nom : Bernard</h3>
+        <h3>Prénom : Jean</h3>
+        <p>Artistes</p>
+        <button onclick="afficherFormulaire('ajouterArtiste')" class="envoiAdmin">Ajouter</button>
+        <div id="ajouterArtiste" class="formulaire" style="display: none;">
+            <!-- Formulaire d'ajout d'artiste -->
+            <form onsubmit="return envoyerFormulaire('ajouterArtisteForm');" id="ajouterArtisteForm" action="php/ExecAdmin/ajout_artiste.php" method="post">
+              <!-- Vos champs de formulaire ici -->
+              <input type="text" name="id_artiste" placeholder="ID de l'artiste">
+              <input type="text" name="nom_artiste" placeholder="Nom de l'artiste">
+              <input type="text" name="genre" placeholder="Genre musical de l'artsite">
+              <input type="text" name="biographie" placeholder="Biographie de l'artiste">
+              <input type="submit" value="Ajouter Artiste">
+            </form>
+        </div>
+        <button onclick="afficherFormulaire('supprimerArtiste')" class="envoiAdmin">Supprimer</button>
+        <p>Evenements</p>
+        <button onclick="afficherFormulaire('ajouterEvenement')" class="envoiAdmin">Ajouter</button>
+        <div id="ajouterArtiste" class="formulaire" style="display: none;">
+            <!-- Formulaire d'ajout d'artiste -->
+            <form onsubmit="return envoyerFormulaire('ajouterEvenementForm');" id="ajouterEvenementForm" action="php/ExecAdmin/ajout_evenement.php" method="post">
+              <!-- Vos champs de formulaire ici -->
+              <input type="text" name="id_evenement" placeholder="ID de l'evenement">
+              <input type="text" name="nom_evenement" placeholder="Nom de l'evenement">
+              <input type="text" name="date_evenement" placeholder="Date de l'evenement">
+              <input type="text" name="lieu" placeholder="Lieu de l'evenement">
+              <input type="text" name="heure" placeholder="Heure de l'evenement">
+              <input type="submit" value="Ajouter Evenement">
+            </form>
+        </div>
+        <button onclick="afficherFormulaire('supprimerEvenement')" class="envoiAdmin">Supprimer</button>
+        <button class="envoiAdmin" style="margin-top: 2cm;">Deconnexion</button>
+    </section>
+
+
+    <footer>
+        <img id="logo" src="images/Logo Blanc.png">
+
+        <div id="footerContact">
+            <div class="contact">
+                <img src="images/phone.svg">
+                <p>+33 6 78 08 94 77</p>
+            </div>
+            <div class="contact">
+                <img src="images/mail.svg">
+                <p>amisdelamusique63@gmail.com</p>
+            </div>
+        </div>
+
+        <img class="reseauxPart" src="images/facebook_blanc.png">
+    </footer>
+
+</body>
+
 </html>
