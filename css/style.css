@@ -6,9 +6,10 @@
     --beige: #B35C45;
     --blanc: #ffffff;
     --gris: #BDBDBD;
-}  
+}
 
-body, * {
+body,
+* {
     margin: 0;
     padding: 0;
 }
@@ -16,10 +17,15 @@ body, * {
 /*****************************************************************/
 
 
-header img{
-    height: 70vh;
+header img {
+    height: 60.1vh;
     width: 70vw;
     object-fit: cover;
+}
+
+
+header #imgheader {
+    height: 70vh;
 }
 
 #event {
@@ -36,7 +42,7 @@ header img{
     color: var(--blanc);
 }
 
-#trapeze::before{
+#trapeze::before {
     content: "";
     width: 0;
     height: 0;
@@ -52,7 +58,7 @@ header img{
     background-color: var(--noir);
     width: calc(38vw - 5rem);
     height: 70vh;
-    padding : 0 5rem;
+    padding: 0 5rem;
     font-size: 4rem;
 }
 
@@ -82,12 +88,14 @@ header img{
     width: 35vw;
     font-size: x-large;
     justify-content: space-between;
+    overflow: hidden;
 }
 
 .infosVertical {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+
 }
 
 .boutonPartenaires {
@@ -97,6 +105,7 @@ header img{
     padding: 0.8rem;
     border-radius: 10px;
     top: 3rem;
+
 }
 
 .boutonPartenaires:hover {
@@ -121,8 +130,8 @@ header img{
 }
 
 
-@media (max-width: 900px) {
-    
+@media (max-width: 700px) {
+
     header img {
         height: 50vh;
     }
@@ -141,7 +150,7 @@ header img{
         color: var(--blanc);
     }
 
-    #trapeze::before{
+    #trapeze::before {
         border-bottom: 50vh solid var(--noir);
         border-left: 19vw solid transparent;
     }
@@ -149,7 +158,7 @@ header img{
     .trapezeContenu {
         width: calc(38vw - 3rem);
         height: 50vh;
-        padding : 0 3rem;
+        padding: 0 3rem;
         font-size: 2rem;
     }
 
@@ -163,31 +172,31 @@ header img{
     }
 
     header img {
-        width: 100vw;
+        width: 100%;
         height: 25vh;
     }
-    
+
     #event {
         font-size: 2.5rem;
     }
-    
+
     #trapeze {
         display: flex;
         position: relative;
     }
 
-    #trapeze::before{
+    #trapeze::before {
         border-bottom: none;
         border-left: none;
     }
-    
+
     .trapezeContenu {
         display: flex;
         flex-direction: column;
         text-align: center;
         width: 100vw;
         height: 20vh;
-        padding : 0 1rem;
+        padding: 0 1rem;
         font-size: 2rem;
     }
 
@@ -208,15 +217,15 @@ header img{
         font-size: large;
     }
 
-    
+
     #logo {
         width: 130px;
     }
 
     .reseauxPart {
         width: 1.8rem;
-    }    
-    
+    }
+
 }
 
 /**********************************************************************************************************
@@ -279,10 +288,10 @@ header img{
     background-color: #d3d3d3;
 }
 
-#gridImg{
+#gridImg {
     position: absolute;
     z-index: 2;
-    margin:0;
+    margin: 0;
     padding: 0;
     display: flex;
     flex-direction: column;
@@ -296,25 +305,28 @@ header img{
 
 }
 
-#gridImg span{
+#gridImg span {
     display: flex;
     width: 85vw;
     align-items: center;
     justify-content: space-between;
+    overflow: hidden;
+    border-radius: 60px 0;
+    margin-bottom: 50px;
 }
 
-#gridImg #coImg1{
+#gridImg #coImg1 {
     width: 30vw;
     border-radius: 60px 0;
 }
 
-#gridImg #coImg2{
+#gridImg #coImg2 {
     height: 20vw;
     border-radius: 0 60px;
     object-fit: cover;
 }
 
-#gridImg #coImg3{
+#gridImg #coImg3 {
     width: 25vw;
 }
 
@@ -346,24 +358,24 @@ header img{
         width: 47vw;
     }
 
-    #gridImg span{
+    #gridImg span {
         display: flex;
         flex-direction: column;
     }
 
-    #gridImg #coImg1{
+    #gridImg #coImg1 {
         width: 350px;
         border-radius: 60px 0;
     }
 
-    #gridImg #coImg2{
+    #gridImg #coImg2 {
         height: 250px;
         border-radius: 0 60px;
         object-fit: cover;
         margin-top: 8vh;
     }
 
-    #gridImg #coImg3{
+    #gridImg #coImg3 {
         width: 350px;
         margin-top: 22vh;
     }
@@ -375,7 +387,7 @@ header img{
 
 #bodyContact {
     background-color: var(--noir);
-    background-image: url("../images/piano.jpg");
+    background-image: url("../img/piano.jpg");
     background-size: auto 100vh;
 }
 
@@ -388,7 +400,7 @@ header img{
     z-index: -1;
 }
 
-#trapeze2::before{
+#trapeze2::before {
     content: "";
     width: 0;
     height: 0;
@@ -412,7 +424,8 @@ header img{
     margin-top: 2rem;
 }
 
-.trapeze2Contenu div, .trapeze2Contenu p {
+.trapeze2Contenu div,
+.trapeze2Contenu p {
     margin-top: 1rem;
 }
 
@@ -448,19 +461,22 @@ header img{
     margin-bottom: 3%;
 }
 
-#formContact input::placeholder, textarea::placeholder {
+#formContact input::placeholder,
+textarea::placeholder {
     color: #4b4b4b;
     font-size: large;
 }
 
-#formContact input:not([type=submit], [type="checkbox"]), textarea {
+#formContact input:not([type=submit], [type="checkbox"]),
+textarea {
     padding: 0.8rem;
     margin-bottom: 2rem;
     border: solid 1px var(--noir);
     border-radius: 10px;
 }
 
-#formContact #objet, #formContact #message {
+#formContact #objet,
+#formContact #message {
     width: calc(100% - 1.6rem);
 }
 
@@ -482,7 +498,7 @@ header img{
 
 @media (max-width: 780px) {
 
-    #formContact .ligne{
+    #formContact .ligne {
         flex-direction: column;
         gap: 0;
     }
@@ -490,27 +506,27 @@ header img{
     #envoiContact {
         width: 50vw;
     }
-    
+
     #trapeze2 {
         display: flex;
         position: relative;
     }
 
-    #trapeze2::before{
+    #trapeze2::before {
         border-bottom: none;
         border-left: none;
     }
-    
+
     .trapeze2Contenu {
         display: flex;
         flex-direction: column;
         text-align: center;
         width: 100vw;
         height: 15rem;
-        padding : 0 1rem;
+        padding: 0 1rem;
         font-size: medium;
     }
-    
+
     #formContact {
         display: flex;
         flex-direction: column;
@@ -551,7 +567,7 @@ header img{
     color: var(--blanc);
     height: fit-content;
     text-align: justify;
-}  
+}
 
 .cartesIF img {
     position: relative;
@@ -564,23 +580,26 @@ header img{
     text-transform: uppercase;
 }
 
-#fondIF1, #fondIF3 {
+#fondIF1,
+#fondIF3 {
     top: 6vh;
     right: 16vw;
     min-height: 56vh;
 }
 
-#reglesMusiciens, #caseConcours {
+#reglesMusiciens,
+#caseConcours {
     background-color: var(--noir);
     padding: 2rem 2rem 10rem;
     margin: 8rem 20vw 0;
     width: 31.25vw;
-}  
+}
 
-#musiciens img, #concours img {
+#musiciens img,
+#concours img {
     left: 28vw;
     top: -10vh;
-} 
+}
 
 #btnIF1 {
     width: 15vw;
@@ -596,7 +615,7 @@ header img{
 #btnIF1:hover {
     color: var(--blanc);
     background-color: var(--bordeaux);
-}  
+}
 
 #LieuDate {
     background-color: var(--bordeaux);
@@ -645,16 +664,17 @@ header img{
         height: 66vh;
     }
 
-    #fondIF1, #fondIF3 {
+    #fondIF1,
+    #fondIF3 {
         right: 4vw;
     }
 
     #fondIF2 {
         left: 4vw;
-        max-height:71vh
     }
 
-    #reglesMusiciens, #caseConcours {
+    #reglesMusiciens,
+    #caseConcours {
         margin: 6rem auto auto 2rem;
         width: 50vw;
     }
@@ -663,20 +683,21 @@ header img{
         left: 65vw;
         top: -26vh;
     }
-    
+
     #LieuDate {
         width: 50vw;
         margin: 0 2rem 3rem auto;
     }
-    
+
     .cartesIF img {
         width: 35vw;
-    } 
+    }
 
-    #musiciens img, #concours img {
+    #musiciens img,
+    #concours img {
         left: 14vw;
         top: -10vh;
-    } 
+    }
 
     #lieu img {
         left: 50vw;
@@ -685,75 +706,347 @@ header img{
 }
 
 @media (max-width: 780px) {
-    
+
     #infosPratiques {
         display: flex;
         flex-direction: column;
     }
-    
+
     .imgFondIF {
         position: absolute;
         width: 100vw;
         border-radius: 0;
         height: 67vh;
     }
-    
+
     .cartesIF {
         align-items: center;
-    }  
-    
+    }
+
     .cartesIF img {
         width: 50vw;
     }
-    
-    #fondIF1, #fondIF3 {
+
+    #fondIF1,
+    #fondIF3 {
         top: 6vh;
         right: auto;
     }
-    
-    #reglesMusiciens, #caseConcours {
+
+    #reglesMusiciens,
+    #caseConcours {
         margin: 2rem auto;
         width: 65vw;
-    }  
-    
-    #musiciens img, #concours img {
+    }
+
+    #musiciens img,
+    #concours img {
         left: auto;
-    } 
-    
+    }
+
     #btnIF1 {
         width: 24vw;
         position: relative;
         left: auto;
         top: -5rem
     }
-    
+
     #LieuDate {
         margin: 0 auto 3rem;
         width: 65vw;
     }
-    
+
     #lieu {
         margin-top: auto;
         bottom: 5rem;
     }
-    
+
     #lieu img {
         left: auto;
     }
-    
+
     #fondIF2 {
         top: 14vh;
         left: auto;
     }
-    
+
     #btnIF2 {
         width: 30vw;
     }
 }
 
 /**********************************************************************************************************
+                                             FOOTER
+**********************************************************************************************************/
+
+footer {
+    background-color: #252526;
+    height: 180px;
+    color: #fff;
+    display: flex;
+    text-align: center;
+    justify-content: space-between;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#logo img {
+    height: auto;
+    width: 300px;
+}
+
+.reseaux {
+    width: 250px;
+}
+
+.reseaux img {
+    height: 80px;
+    width: 80px;
+}
+
+footer p {
+    text-align: center;
+    font-size: 24px;
+    top: 70px;
+}
+
+.Contact {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+}
+
+.Contact img {
+    height: 70px;
+    width: 70px;
+}
+
+.mail {
+    display: flex;
+    flex-direction: row;
+    margin-right: 50px;
+    text-align: center;
+    align-items: center;
+}
+
+.mail img {
+    height: 70px;
+    width: 70px;
+}
+
+.mail a {
+    text-decoration: none;
+    color: #fff;
+}
+
+@media screen and (max-width: 768px) {
+    footer {
+        flex-direction: column;
+        text-align: center;
+        height: 400px;
+    }
+
+    .colonne {
+        margin-top: 20px;
+    }
+
+    .Contact img {
+        height: 50px;
+        width: 50px;
+    }
+
+    .mail {
+        margin-right: 0;
+    }
+
+    .mail img {
+        height: 40px;
+        width: 40px;
+    }
+
+    #logo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+    }
+
+    #logo img {
+        height: auto;
+        width: 250px;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+
+    footer {
+        flex-direction: column;
+        text-align: center;
+        height: 400px;
+    }
+
+    .colonne {
+        margin-top: 20px;
+    }
+
+    .Contact img {
+        height: 50px;
+        width: 50px;
+    }
+
+    .mail {
+        margin-right: 0;
+    }
+
+    .mail img {
+        height: 40px;
+        width: 40px;
+    }
+
+    #logo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+    }
+
+    #logo img {
+        height: auto;
+        width: 250px;
+    }
+}
+
+/**********************************************************************************************************
+                                             admin
+**********************************************************************************************************/
+
+#admin {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    gap: 2vw;
+    padding: 5rem 0 6rem;
+    z-index: 3;
+    height: auto;
+    flex-direction: column;
+    background-color: var(--bordeaux);
+    width: 45vw;
+    height: auto;
+    border-radius: 1px;
+    margin-left: 14cm;
+    border-radius: 2cm;
+    margin-top: 100px;
+}
+
+#admin p {
+    font-size: xx-large;
+    color: var(--blanc);
+    margin-bottom: 2rem;
+    font-size: 3rem;
+    text-align: center;
+}
+
+#admin h3 {
+    color: var(--blanc);
+    margin-left: 1cm;
+}
+
+.envoiAdmin {
+    width: 19vw;
+    text-decoration: none;
+    border: none;
+    color: var(--bordeaux);
+    background-color: var(--blanc);
+    padding: 0.8rem 0;
+    margin: 0.5rem 1.8rem;
+    font-size: large;
+    margin-left: 6.5cm;
+
+}
+
+.envoiAdmin:hover {
+    background-color: #d3d3d3;
+}
+
+
+
+
+/**********************************************************************************************************
+                                            compte
+**********************************************************************************************************/
+
+#gridImg2 {
+    position: absolute;
+    z-index: 2;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    left: 50%;
+    transform: translateX(-50%);
+    width: fit-content;
+    height: 80vh;
+    padding: 1rem;
+    align-items: center;
+
+}
+
+#gridImg2 span {
+    display: flex;
+    width: 85vw;
+    justify-content: space-between;
+    overflow: hidden;
+}
+
+#gridImg2 #coImg1 {
+    width: 30vw;
+    border-radius: 60px 0;
+    margin-left: 30cm;
+    margin-top: 100px;
+}
+
+#gridImg2 #coImg2 {
+    height: 20vw;
+    border-radius: 0 60px;
+    object-fit: cover;
+}
+
+#gridImg2 #coImg3 {
+    width: 25vw;
+    margin-top: 10cm;
+}
+
+@media (max-width: 700px) {
+
+    #gridImg2 span {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #gridImg2 #coImg1 {
+        width: 350px;
+        border-radius: 60px 0;
+    }
+
+    #gridImg2 #coImg2 {
+        height: 250px;
+        border-radius: 0 60px;
+        object-fit: cover;
+        margin-top: 8vh;
+    }
+
+    #gridImg2 #coImg3 {
+        width: 350px;
+        margin-top: 22vh;
+    }
+}
+
+/**********************************************************************************************************
                                              ACCUEIL
 **********************************************************************************************************/
+
 
 #eventA {
     color: #FFF;
@@ -778,6 +1071,7 @@ header img{
 }
 
 .trapezeContenuA {
+
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -802,7 +1096,7 @@ header img{
     height: 410px;
     background-color: #6A020C;
     border-radius: 10%;
-
+    margin-top: 50px;
 }
 
 #titre1 {
@@ -860,7 +1154,7 @@ header img{
     border-radius: 20% 0;
 }
 
-#concours {
+#concours1 {
     position: relative;
     margin-left: auto;
     margin-right: auto;
@@ -937,6 +1231,7 @@ header img{
     background-color: #6A020C;
     top: 40%;
 }
+
 .blocR2 h1 {
     color: #FFF;
     text-align: center;
@@ -951,6 +1246,7 @@ header img{
     margin-top: 3em;
     text-align: right;
 }
+
 .imgFF2 {
     position: absolute;
     left: -50%;
@@ -962,6 +1258,7 @@ header img{
     height: 550px;
     border-radius: 0 20%;
 }
+
 .imgHaut2 {
     position: absolute;
     left: 17%;
@@ -975,125 +1272,361 @@ header img{
     height: auto;
 }
 
+@media screen and (max-width: 700px) {
+header img{
+    width: 100%;
+}
+    #eventA {
+        color: #FFF;
+        text-transform: uppercase;
+        font-size: 2.3rem;
+    }
+
+    #trapezeA {
+        display: flex;
+        position: absolute;
+        top: 0;
+        right: 0;
+        color: var(--blanc);
+    }
+
+    #trapezeA::before {
+        border-bottom: 50vh solid var(--noir);
+        border-left: 19vw solid transparent;
+    }
+
+    .trapezeContenuA {
+        width: calc(38vw - 3rem);
+        height: 50vh;
+        padding: 0 3rem;
+        font-size: 2rem;
+    }
+
+    #concerto {
+        padding-top: 180px;
+    }
+
+    .Rouge {
+        z-index: 1;
+        width: 400px;
+        height: 600px;
+    }
+
+    #titre1 {
+        width: 250px;
+        text-align: center;
+        margin-left: 11%;
+    }
+
+    #titre1S {
+        text-align: center;
+        top: 11%;
+        left: -7%;
+    }
+
+    .cadre h1 {
+        color: #FFF;
+        padding-top: 5em;
+        width: 100%;
+        font-size: 29px;
+    }
+
+    .cadre p {
+        position: absolute;
+        top: 50%;
+        left: 14%;
+        width: 310px;
+        color: #FFF;
+    }
+
+    .imgHaut {
+        position: absolute;
+        margin-top: 50px;
+        left: 25%;
+        transform: none;
+        top: -20%;
+        z-index: 1;
+        /*border-style: dashed;*/
+        transform: translateY(-40%);
+    }
+
+    .imgHaut img {
+        width: 200px;
+        height: auto;
+    }
+
+    .imgBas {
+        position: absolute;
+        left: 10%;
+        transform: none;
+        top: 80%;
+        z-index: 1;
+    }
+
+    .imgBas img {
+        width: 320px;
+        height: auto;
+        border-radius: 20% 0;
+    }
+
+    #concours1 {
+        position: relative;
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+        height: 410px;
+        padding-top: 250px;
+    }
+
+    .imgFF {
+        position: absolute;
+        left: -9%;
+    }
+
+    .imgFF img {
+        max-width: 98%;
+        height: auto;
+        border-radius: 0%;
+    }
+
+    .blocR1 {
+        position: absolute;
+        margin-left: auto;
+        margin-right: auto;
+        left: 13.5%;
+        width: 350px;
+        height: 600px;
+        top: 20%;
+        background-color: #6A020C;
+    }
+
+    .blocR1 h1 {
+        color: #FFF;
+        text-align: center;
+        margin-top: 5em;
+        font-size: 29px;
+    }
+
+    .blocR1 p {
+        color: #FFF;
+        width: 320px;
+        margin-left: 2em;
+        margin-top: 3em;
+    }
+
+    .imgBas2 {
+        position: absolute;
+        left: 7%;
+        transform: none;
+        top: 80%;
+        z-index: 1;
+        
+    }
+
+    .imgBas2 img {
+        width: 300px;
+        height: auto;
+    }
+
+    #stand {
+        position: relative;
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+        height: 410px;
+        padding-top: 450px;
+    }
+
+    .blocR2 {
+        position: absolute;
+        margin-left: auto;
+        margin-right: auto;
+        left: 13.5%;
+        width: 350px;
+        height: 600px;
+        background-color: #6A020C;
+        top: 40%;
+    }
+
+    .blocR2 h1 {
+        color: #FFF;
+        text-align: center;
+        margin-top: 5em;
+        font-size: 29px;
+    }
+
+    .blocR2 p {
+        color: #FFF;
+        width: 320px;;
+        margin-top: 3em;
+        text-align: left;
+    }
+
+    .imgFF2 {
+        position: absolute;
+    }
+
+    .imgFF2 img {
+
+        width: 100%;
+        height: auto;
+        border-radius: 0%;
+    }
+
+    .imgHaut2 {
+        position: absolute;
+        left: 7%;
+        transform: none;
+        top: -15%;
+        z-index: 1;
+    }
+
+    .imgHaut2 img {
+        width: 300px;
+        height: auto;
+    }
+
+}
+
+@media (max-width: 780px) {
+
+    header {
+        display: flex;
+        flex-direction: column;
+    }
+
+    header img {
+        height: 25vh;
+    }
+
+    #eventA {
+        font-size: 2.5rem;
+    }
+
+    #trapezeA {
+        display: flex;
+        position: relative;
+    }
+
+    #trapezeA::before {
+        border-bottom: none;
+        border-left: none;
+    }
+
+    .trapezeContenuA {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        width: 100vw;
+        height: 20vh;
+        padding: 0 1rem;
+        font-size: 2rem;
+    }
+}
+
 /**********************************************************************************************************
-                                             FOOTER
+                                             HEADER
 **********************************************************************************************************/
-
-footer{
-    background-color: #252526;
-    height: 180px;
-    color: #fff;
+.navbar {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
     display: flex;
-    text-align: center;
     justify-content: space-between;
-    justify-content: space-around;
     align-items: center;
-}
-#logo img{
-    height: auto;
-    width: 300px;
-}
-.reseaux{
-    width: 250px;
-}
-.reseaux img{
-    height: 80px;
-    width: 80px;
-}
-footer p{
-    text-align: center;
-    font-size: 24px;
-    top: 70px;
-}
-.Contact{
-    display: flex;
-    justify-content: center;
-    flex-direction: row;
-    align-items: center;
-}
-.Contact img{
-    height: 70px;
-    width: 70px;
-}
-.mail{
-    display: flex;
-    flex-direction: row;
-    margin-right: 50px;
-    text-align: center;
-    align-items: center;
-}
-.mail img{
-    height: 70px;
-    width: 70px;
+    background-color: #333;
+    color: white;
+    height: 90px;
+    z-index: 4;
+
+
 }
 
-.mail a{
+.navbar-left ul {
+    list-style: none;
+    display: flex;
+}
+
+.navbar-left ul li {
+    margin-right: 40px;
+}
+
+.navbar-left ul li a {
     text-decoration: none;
-    color: #fff;
+    color: white;
 }
+
+.navbar-right img {
+    position: absolute;
+    left: 6%;
+    top: 37%;
+    width: 100px;
+    height: auto;
+}
+
+.navbar-left.show-menu {
+    display: block;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    text-align: center;
+}
+
+.burger-menu {
+    display: none;
+    cursor: pointer;
+}
+
+.burger-menu div {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 5px 0;
+}
+
 @media screen and (max-width: 768px) {
-    footer {
-        flex-direction: column;
+    .burger-menu {
+        display: block;
+        position: absolute;
+        left: 80%;
+    }
+
+    .navbar-left {
+        display: none;
+    }
+
+    .navbar-left {
+        display: none;
+    }
+
+    .navbar-left.show-menu {
+        display: block;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        width: 100%;
+        background-color: #333;
         text-align: center;
-        height: 400px;
     }
 
-    .colonne {
-        margin-top: 20px;
-    }
-    .Contact img {
-        height: 50px;
-        width: 50px;
-    }
-    .mail {
-        margin-right: 0;
-    }
-    .mail img {
-        height: 40px;
-        width: 40px;
-    }
-    #logo {
+    .navbar-left ul {
+        list-style: none;
         display: flex;
-        justify-content: center;
-        align-items: center;
-
-    }
-    #logo img{
-        height: auto;
-        width: 250px;
-    }
-}
-
-@media screen and (max-width: 1024px) {
-
-    footer {
         flex-direction: column;
-        text-align: center;
-        height: 400px;
-    }
-
-    .colonne {
-        margin-top: 20px;
-    }
-    .Contact img {
-        height: 50px;
-        width: 50px;
-    }
-    .mail {
-        margin-right: 0;
-    }
-    .mail img {
-        height: 40px;
-        width: 40px;
-    }
-    #logo {
-        display: flex;
-        justify-content: center;
         align-items: center;
+    }
 
+    .navbar-left ul li {
+        margin-bottom: 20px;
     }
-    #logo img{
-        height: auto;
-        width: 250px;
+
+    .navbar-left ul li a {
+        text-decoration: none;
+        color: white;
+        font-size: 18px;
     }
+
 }
